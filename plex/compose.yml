@@ -1,0 +1,19 @@
+---
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Istanbul
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - ./library:/config
+      - ~/myHDD/Torrent/Dizi:/tv
+      - /home/username/Videos/Dizi:/tv2
+      - ~/myHDD/Torrent/Film:/movies
+      - /home/username/Videos/Film:/movies2
+    restart: unless-stopped

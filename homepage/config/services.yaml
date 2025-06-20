@@ -1,0 +1,129 @@
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Admin:
+    - Router:
+        icon: router.png
+        href: http://192.168.1.1/
+
+    - Portainer:
+        icon: portainer.png
+        widget:
+          type: portainer
+          fields: ["running", "stopped", "total"]
+          url: https://192.168.1.26:9443
+          env: 2
+          key: 
+        href: https://portainer.username.org
+        description: Web UI for Docker
+
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager.png
+        href: https://username.org
+        description: SSL certificates or something
+
+    - Pi-hole:
+        icon: pi-hole.png
+        href: https://pihole.username.org/admin
+        description: Ad Blocker
+
+- Media:
+    - Plex:
+        icon: plex.png
+        widget:
+          type: plex
+          fields: ["streams", "tv", "movies"]
+          url: https://plex.username.org
+          key: 
+        href: https://plex.username.org
+        description: Media Server
+
+    - Overseerr:
+        icon: overseerr.png
+        widget:
+          type: overseerr
+          fields: ["pending", "approved", "processing"]
+          url: http://192.168.1.26:5055
+          key: 
+        href: https://overseerr.username.org
+        description: Media Requests
+
+    - Radarr:
+        icon: radarr.png
+        widget:
+          type: radarr
+          fields: ["wanted","missing","queued","movies"]
+          url: http://192.168.1.26:7878
+          key: 
+        href: https://radarr.username.org
+        description: Movies
+
+    - Sonarr:
+        icon: sonarr.png
+        widget:
+          type: sonarr
+          fields: ["series", "wanted","queued"]
+          url: http://192.168.1.26:8989
+          key: 
+        href: https://sonarr.username.org
+        description: Shows
+
+    - Bazarr:
+        icon: bazarr.png
+        widget:
+          type: bazarr
+          fields: ["missingEpisodes", "missingMovies"]
+          url: http://192.168.1.26:6767
+          key: 
+        href: http://bazarr.username.org
+        description: Subtitles
+
+    - Prowlarr:
+        type: prowlarr
+        icon: prowlarr.png
+        href: https://prowlarr.username.org
+        description: Torrent Indexer
+
+    - Flaresolverr:
+        type: flaresolverr
+        icon: flaresolverr.png
+        href: http://192.168.1.26:8191/
+        description: bypass Cloudflare
+
+- Downloaders:
+    - MeTube:
+        icon: youtube-dl.png
+        href: https://metube.username.org/
+        description: Youtube Downloader
+
+    - qBittorrent:
+        icon: qbittorrent.png
+        href: https://qbt.username.org
+        widget:
+          type: qbittorrent
+          fields: ["leech", "download", "seed", "upload"]
+          url: https://qbt.username.org
+          username: 
+          password: 
+
+- Archive:
+    - Linkwarden:
+        icon: linkwarden.png
+        widget:
+          type: linkwarden
+          fields: ["links"]
+          url: http://192.168.1.26:3000
+          key: 
+        href: https://linkwarden.username.org
+        description: Bookmark Manager
+
+    - Mealie:
+        icon: mealie.png
+        widget:
+          type: mealie
+          fields: ["recipes"]
+          url: http://192.168.1.26:9925
+          key: 
+          version: 2
+        href: https://mealie.username.org/
+        description: Recipe Manager
